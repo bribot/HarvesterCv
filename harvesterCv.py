@@ -37,7 +37,7 @@ class Adquisition(Harvester):
     
     def read(self):
         buffer = self.cam.fetch()
-        print(buffer)
+        #print(buffer)
         payload = buffer.payload
         component = payload.components[0]
         width = component.width
@@ -88,7 +88,6 @@ def test_run():
             ret,frame = cap.read()
             print(frame.shape)
             height, width, layer = frame.shape
-            scale_percent = 20 # percent of original size
             width = int(width * scale_percent / 100)
             height = int(height * scale_percent / 100)
             dim = (width, height)
