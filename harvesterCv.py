@@ -28,6 +28,15 @@ class Adquisition(Harvester):
         self.cam.remote_device.node_map.Gain.set_value(gain)
         val = self.cam.remote_device.node_map.Gain.value
         print("Gain set to ", val)
+    
+    def setTrigger(self, triggerVal):
+        self.cam.remote_device.node_map.TriggerMode.value = triggerVal
+        val = self.cam.remote_device.node_map.TriggerMode.value
+        print("Trigger set ", val)
+
+    def softwareTrigger(self):
+        self.cam.remote_device.node_map.TriggerSoftware.execute()
+
 
     def startAdquisition(self):
         self.cam.start()
@@ -81,12 +90,14 @@ def test_run():
     cap.setAdquisitionDevice({'serial_number': 'S1176510'})
     cap.setExposure(50000)
     cap.setGain(1)
+    cap.setTrigger("On")
     cap.startAdquisition()
     scale_percent = 20 # percent of original size
     
     while(True):
+            cap.softwareTrigger()
             ret,frame = cap.read()
-            print(frame.shape)
+            #print(frame.shape)
             height, width, layer = frame.shape
             width = int(width * scale_percent / 100)
             height = int(height * scale_percent / 100)
