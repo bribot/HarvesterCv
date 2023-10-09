@@ -101,3 +101,25 @@ def test_run():
 
 if __name__ == '__main__':
     test_run()
+
+# ia.remote_device.node_map.Width.value = 2048
+# ia.remote_device.node_map.Height.value = 2000
+# ia.remote_device.node_map.PixelFormat.value = 'RGB8'
+# ia.remote_device.node_map.AcquisitionLineRate.set_value(15000)
+# ia.remote_device.node_map.ExposureTime.set_value(50000)
+# ia.remote_device.node_map.Gain.set_value(6)
+# ia.remote_device.node_map.TriggerSelector.value = "FrameBurstStart"
+# ia.remote_device.node_map.TriggerMode.value = "On"
+# ia.remote_device.node_map.triggerFrameCount.set_value(1) # new
+# ia.remote_device.node_map.TriggerSource.value = "Line2"
+# ia.remote_device.node_map.TriggerActivation.value = "RisingEdge"
+# ia.remote_device.node_map.TriggerDelay.set_value(0.0) # new
+# ia.remote_device.node_map.triggerDelaySource.value = "lineTriggerSignal" # new
+
+# ia.remote_device.node_map.LineSelector.value = "Line2"
+# ia.remote_device.node_map.LineFormat.value = "SingleEnded"
+
+# ia.remote_device.node_map.lineDetectionLevel.value = "Threshold_for_3V3"
+# ia.remote_device.node_map.LineInverter.value = False 
+# ia.remote_device.node_map.lineDebouncingPeriod.value = 0
+# ia.remote_device.node_map.lineElectricalTermination.value = "Disabled"
