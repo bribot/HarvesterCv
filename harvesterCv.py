@@ -91,7 +91,7 @@ def test_run():
     pass
 
 def test():
-    cap.setAdquisitionDevice({'serial_number': 'S1176510'})
+    cap.setAdquisitionDevice({'serial_number': 'H2543354'})
     cap.setExposure(50000)
     cap.setGain(1)
     cap.setTrigger("On")
