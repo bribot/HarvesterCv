@@ -9,7 +9,8 @@ from harvesters.util.pfnc import mono_location_formats, \
 class Adquisition(Harvester):
     def __init__(self):
         self.h = Harvester()
-        self.h.add_file("./mvGenTLProducer.cti",True,True)
+        #self.h.add_file("../mvGenTLProducer.cti",True,True)
+        self.h.add_file("../baumer/lib/libbgapi2_gige.cti")
         self.h.update()
 
     def getDevices(self):
